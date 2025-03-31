@@ -12,6 +12,7 @@ using Google.Apis.YouTube.v3.Data;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Avalonia.Threading;
 
 namespace Uploader;
 
@@ -28,8 +29,8 @@ public partial class MainWindow : Window
         var credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
         new ClientSecrets
         {
-            ClientId = "YOUR_CLIENT_ID",
-            ClientSecret = "YOUR_CLIENT_SECRET"
+            ClientId = "",
+            ClientSecret = ""
         },
         new[] { YouTubeService.Scope.YoutubeUpload },
         "user",
@@ -162,7 +163,10 @@ public partial class MainWindow : Window
 
     private void AppendToConsole(string message)
     {
-        ConsoleOutput.Text += message + Environment.NewLine;
+        Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            ConsoleOutput.Text += message + Environment.NewLine;
+        });
     }
 
 }

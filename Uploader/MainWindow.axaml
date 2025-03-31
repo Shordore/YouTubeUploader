@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="YouTube Uploader" Width = "800" Height = "600"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Uploader.MainWindow">
+
+<Canvas>
+    <Rectangle 
+        Width="700" Height="200"
+        Stroke="Gray"
+        StrokeThickness="2"
+        StrokeDashArray="4,2"
+        Fill="Transparent"
+        Canvas.Left = "50"
+        Canvas.Top = "350"/>
+
+</Canvas>
+</Window>
+

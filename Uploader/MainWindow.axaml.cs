@@ -25,20 +25,76 @@ public partial class MainWindow : Window
 
     private async Task VideoUploader(string FilePath, string VideoName)
     {
-        //TODO: Add Function
+        var credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+        new ClientSecrets
+        {
+            ClientId = "YOUR_CLIENT_ID",
+            ClientSecret = "YOUR_CLIENT_SECRET"
+        },
+        new[] { YouTubeService.Scope.YoutubeUpload },
+        "user",
+        CancellationToken.None
+    );
+
+
+        var youtubeService = new YouTubeService(new BaseClientService.Initializer()
+        {
+            HttpClientInitializer = credential,
+            ApplicationName = "YouTubeUploader"
+        });
+
+        var video = new Video
+        {
+            Snippet = new VideoSnippet
+            {
+                Title = VideoName,
+                Description = "",
+                Tags = new string[] { "gaming", "clip" },
+                CategoryId = "22"
+            },
+            Status = new VideoStatus
+            {
+                PrivacyStatus = "unlisted"
+            }
+        };
+
+        using (var fileStream = new FileStream(FilePath, FileMode.Open))
+        {
+            var videosInsertRequest = youtubeService.Videos.Insert(video, "snippet,status", fileStream, "video/*");
+
+
+            videosInsertRequest.ProgressChanged += progress =>
+            {
+                switch (progress.Status)
+                {
+                    case UploadStatus.Uploading:
+                        AppendToConsole($"Uploading... {progress.BytesSent} bytes sent.");
+                        break;
+                    case UploadStatus.Completed:
+                        AppendToConsole("Upload completed!");
+                        break;
+                    case UploadStatus.Failed:
+                        AppendToConsole("Upload failed: " + progress.Exception);
+                        break;
+                }
+            };
+
+
+            await videosInsertRequest.UploadAsync();
+        }
     }
     private async Task ClipBoardPaste()
     {
         var clipboard = this.Clipboard;
         if (clipboard == null)
         {
-            Console.WriteLine("Clipboard is null");
+            AppendToConsole("Clipboard is null");
             return;
         }
         var text = await clipboard.GetTextAsync();
 
         //Debug
-        Console.WriteLine("Clipboard text: " + (text ?? "null"));
+        AppendToConsole("Clipboard text: " + (text ?? "null"));
 
 
         if (Uri.TryCreate(text, UriKind.Absolute, out var uri) && uri.IsFile)
@@ -50,7 +106,7 @@ public partial class MainWindow : Window
             string videoTitle = VideoNameBox.Text;
             if (string.IsNullOrWhiteSpace(videoTitle))
             {
-                Console.WriteLine("No video title specified. Please enter a name.");
+                AppendToConsole("No video title specified. Please enter a name.");
                 return;
             }
             await VideoUploader(filePath, videoTitle);
@@ -68,13 +124,13 @@ public partial class MainWindow : Window
 
                     if (item is Avalonia.Platform.Storage.IStorageItem storageItem)
                     {
-                        Console.WriteLine("Clipboard file path: " + storageItem.Path.LocalPath);
+                        AppendToConsole("Clipboard file path: " + storageItem.Path.LocalPath);
 
 
                         string videoTitle = VideoNameBox.Text;
                         if (string.IsNullOrWhiteSpace(videoTitle))
                         {
-                            Console.WriteLine("No video title specified. Please enter a name.");
+                            AppendToConsole("No video title specified. Please enter a name.");
                             return;
                         }
 
@@ -85,7 +141,7 @@ public partial class MainWindow : Window
             }
             else
             {
-                Console.WriteLine("Clipboard data is not a file or a valid URI.");
+                AppendToConsole("Clipboard data is not a file or a valid URI.");
             }
 
         }
@@ -102,6 +158,11 @@ public partial class MainWindow : Window
     private void PasteArea_PointerPressed(object sender, PointerPressedEventArgs e)
     {
         (sender as Control)?.Focus();
+    }
+
+    private void AppendToConsole(string message)
+    {
+        ConsoleOutput.Text += message + Environment.NewLine;
     }
 
 }

@@ -55,6 +55,21 @@
 <TextBox Name="VideoNameBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,300,0,0" 
          Watermark="Add Video Name Here" FontSize="14"/>
 
+<TextBox x:Name="ConsoleOutput"
+            
+            Width="240"
+            Height="300"
+            TextWrapping="Wrap"
+             HorizontalAlignment="Right"
+            VerticalAlignment="Top" Margin="0,30,10,0"
+             IsReadOnly="True"
+             AcceptsReturn="True"
+             FontSize="12"
+             FontFamily="Consolas"
+             Background="Black"
+             Foreground="Lime"
+             />
+
 </Grid>
 </Window>
 

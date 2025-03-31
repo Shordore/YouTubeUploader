@@ -4,6 +4,14 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Platform;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Services;
+using Google.Apis.Upload;
+using Google.Apis.YouTube.v3;
+using Google.Apis.YouTube.v3.Data;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Uploader;
 
@@ -15,6 +23,10 @@ public partial class MainWindow : Window
     }
 
 
+    private async Task VideoUploader(string FilePath, string VideoName)
+    {
+        //TODO: Add Function
+    }
     private async Task ClipBoardPaste()
     {
         var clipboard = this.Clipboard;
@@ -33,7 +45,15 @@ public partial class MainWindow : Window
         {
 
             string filePath = uri.LocalPath;
-            //TODO: Execute File Upload Function
+
+
+            string videoTitle = VideoNameBox.Text;
+            if (string.IsNullOrWhiteSpace(videoTitle))
+            {
+                Console.WriteLine("No video title specified. Please enter a name.");
+                return;
+            }
+            await VideoUploader(filePath, videoTitle);
 
         }
 
@@ -48,8 +68,18 @@ public partial class MainWindow : Window
 
                     if (item is Avalonia.Platform.Storage.IStorageItem storageItem)
                     {
-                        Console.WriteLine("Clipboard file path: " + storageItem.Path);
-                        // TODO: Execute File Upload Function
+                        Console.WriteLine("Clipboard file path: " + storageItem.Path.LocalPath);
+
+
+                        string videoTitle = VideoNameBox.Text;
+                        if (string.IsNullOrWhiteSpace(videoTitle))
+                        {
+                            Console.WriteLine("No video title specified. Please enter a name.");
+                            return;
+                        }
+
+
+                        await VideoUploader(storageItem.Path.LocalPath, videoTitle);
                     }
                 }
             }

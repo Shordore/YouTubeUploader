@@ -22,6 +22,10 @@
 /Users/sdarioosh/.nuget/packages/avalonia/11.2.6/ref/net8.0/Avalonia.Vulkan.dll
 /Users/sdarioosh/.nuget/packages/avalonia.win32/11.2.6/lib/net8.0/Avalonia.Win32.dll
 /Users/sdarioosh/.nuget/packages/avalonia.x11/11.2.6/lib/net8.0/Avalonia.X11.dll
+/Users/sdarioosh/.nuget/packages/google.apis.auth/1.69.0/lib/net6.0/Google.Apis.Auth.dll
+/Users/sdarioosh/.nuget/packages/google.apis.core/1.69.0/lib/net6.0/Google.Apis.Core.dll
+/Users/sdarioosh/.nuget/packages/google.apis/1.69.0/lib/net6.0/Google.Apis.dll
+/Users/sdarioosh/.nuget/packages/google.apis.youtube.v3/1.69.0.3707/lib/net6.0/Google.Apis.YouTube.v3.dll
 /Users/sdarioosh/.nuget/packages/harfbuzzsharp/7.3.0.3/lib/net6.0/HarfBuzzSharp.dll
 /Users/sdarioosh/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/Microsoft.CSharp.dll
@@ -31,9 +35,11 @@
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/Microsoft.Win32.Registry.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/mscorlib.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/netstandard.dll
+/Users/sdarioosh/.nuget/packages/newtonsoft.json/13.0.3/lib/net6.0/Newtonsoft.Json.dll
 /Users/sdarioosh/.nuget/packages/skiasharp/2.88.9/lib/net6.0/SkiaSharp.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.AppContext.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Buffers.dll
+/Users/sdarioosh/.nuget/packages/system.codedom/7.0.0/lib/net7.0/System.CodeDom.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Collections.Concurrent.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Collections.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Collections.Immutable.dll
@@ -90,6 +96,7 @@
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Linq.Expressions.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Linq.Parallel.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Linq.Queryable.dll
+/Users/sdarioosh/.nuget/packages/system.management/7.0.2/lib/net7.0/System.Management.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Memory.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Net.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.10/ref/net8.0/System.Net.Http.dll

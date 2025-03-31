@@ -62,6 +62,14 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.2.6, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.69.0, )"
+            },
+            "Google.Apis.YouTube.v3": {
+              "target": "Package",
+              "version": "[1.69.0.3707, )"
             }
           },
           "imports": [

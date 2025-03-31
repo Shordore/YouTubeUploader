@@ -66,3 +66,11 @@
 /Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/obj/Debug/net8.0/Uploader.csproj.Up2Date
 /Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/obj/Debug/net8.0/Uploader.genruntimeconfig.cache
 /Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/obj/Debug/net8.0/ref/Uploader.dll
+/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Debug/net8.0/Google.Apis.dll
+/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Debug/net8.0/Google.Apis.Auth.dll
+/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Debug/net8.0/Google.Apis.Core.dll
+/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Debug/net8.0/Google.Apis.YouTube.v3.dll
+/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Debug/net8.0/System.CodeDom.dll
+/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Debug/net8.0/System.Management.dll
+/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Management.dll

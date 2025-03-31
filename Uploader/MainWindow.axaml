@@ -6,7 +6,31 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Uploader.MainWindow">
 
+<Grid>
+<TextBlock Text="Paste Your Clip Into The Box Below:" 
+           HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"
+           FontSize="16" FontWeight="Bold"/>
+
+<TextBlock Text="Shahyah Darioosh 2025"
+           HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"
+           FontSize="12"/>
+
+
+<Grid.Background>
+    <SolidColorBrush Color="#1B1B2A"/>
+</Grid.Background>
+
+
+
 <Canvas>
+<Border Name="PasteArea" Focusable="True" KeyDown="PasteArea_KeyDown"></Border>
+<TextBlock Text="Paste Box"
+           FontSize="14"
+           FontWeight="Bold"
+           Width="700"
+           TextAlignment="Center"
+           Canvas.Left="50"
+           Canvas.Top="325"/>
     <Rectangle 
         Width="700" Height="200"
         Stroke="Gray"
@@ -17,5 +41,6 @@
         Canvas.Top = "350"/>
 
 </Canvas>
+</Grid>
 </Window>
 

@@ -23,15 +23,8 @@
 
 
 <Canvas>
-<Border Name="PasteArea" Focusable="True" KeyDown="PasteArea_KeyDown"></Border>
-<TextBlock Text="Paste Box"
-           FontSize="14"
-           FontWeight="Bold"
-           Width="700"
-           TextAlignment="Center"
-           Canvas.Left="50"
-           Canvas.Top="325"/>
-    <Rectangle 
+
+<Rectangle 
         Width="700" Height="200"
         Stroke="Gray"
         StrokeThickness="2"
@@ -39,6 +32,23 @@
         Fill="Transparent"
         Canvas.Left = "50"
         Canvas.Top = "350"/>
+
+<Border Name="PasteArea" 
+        Focusable="True"
+        PointerPressed="PasteArea_PointerPressed"
+        KeyDown="PasteArea_KeyDown"
+        Width="700"
+        Height="200"
+        Canvas.Left="50"
+        Canvas.Top="350"
+        Background="Transparent">
+    <TextBlock Text="Paste Box"
+               FontSize="14"
+               FontWeight="Bold"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+</Border>
+    
 
 </Canvas>
 </Grid>

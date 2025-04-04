@@ -14,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Avalonia.Threading;
 
+
 namespace Uploader;
 
 public partial class MainWindow : Window
@@ -55,7 +56,8 @@ public partial class MainWindow : Window
             },
             Status = new VideoStatus
             {
-                PrivacyStatus = "unlisted"
+                PrivacyStatus = "unlisted",
+                SelfDeclaredMadeForKids = false
             }
         };
 
@@ -81,7 +83,14 @@ public partial class MainWindow : Window
             };
 
 
-            await videosInsertRequest.UploadAsync();
+            var response = await videosInsertRequest.UploadAsync();
+            if (response.Status == UploadStatus.Completed)
+            {
+
+                var videoid = videosInsertRequest.ResponseBody.Id;
+                var url = $"https://youtu.be/{videoid}";
+                AppendToConsole("Video URL: " + url);
+            }
         }
     }
     private async Task ClipBoardPaste()

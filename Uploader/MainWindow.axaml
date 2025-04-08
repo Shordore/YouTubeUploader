@@ -70,6 +70,10 @@
              Foreground="Lime"
              />
 
+
+<Button Name="SettingsWindows" Content="Settings" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,10,0,0" 
+        Click="SettingsWindows_Click"/>
+
 </Grid>
 </Window>
 

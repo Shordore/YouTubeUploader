@@ -1,5 +1,0 @@
-/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Release/net8.0/win-x64/publish/Uploader.pdb
-/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Release/net8.0/win-x64/publish/av_libglesv2.dll
-/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Release/net8.0/win-x64/publish/libHarfBuzzSharp.dll
-/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Release/net8.0/win-x64/publish/libSkiaSharp.dll
-/Volumes/Oxy_Code_On/School/Coding Projects/Personal Projects/YouTubeUploader/Uploader/bin/Release/net8.0/win-x64/publish/Uploader.exe

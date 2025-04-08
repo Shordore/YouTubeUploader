@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Avalonia.Interactivity;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -24,14 +25,40 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-
+    private void SettingsWindows_Click(object? sender, RoutedEventArgs e)
+    {
+        var settingsWindow = new SettingsWindow();
+        settingsWindow.Show();
+    }
     private async Task VideoUploader(string FilePath, string VideoName)
     {
+
+        string clientId = "";
+        string clientSecret = "";
+        var filePath = "secret.txt";
+        if (!File.Exists(filePath))
+        {
+            AppendToConsole("Credentials file not found. Please create one.");
+            return;
+        }
+
+        string[] lines = File.ReadAllLines(filePath);
+        if (lines.Length < 2)
+        {
+            AppendToConsole("Invalid credentials file. Please check the format.");
+            return;
+        }
+        clientId = lines[0];
+        clientSecret = lines[1];
+
+
+
+
         var credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
         new ClientSecrets
         {
-            ClientId = "",
-            ClientSecret = ""
+            ClientId = clientId,
+            ClientSecret = clientSecret
         },
         new[] { YouTubeService.Scope.YoutubeUpload },
         "user",

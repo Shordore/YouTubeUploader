@@ -7,12 +7,16 @@
         x:Class="Uploader.SettingsWindow">
 
     <Grid>
+
+    <Grid.Background>
+    <SolidColorBrush Color="#1B1B2A"/>
+</Grid.Background>
         <TextBox x:Name="ClientIdBox" Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"
                  Watermark="Client ID" FontSize="14"/>
         <TextBox x:Name="ClientSecretBox" Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0"
                  Watermark="Client Secret" FontSize="14"/>
 
-        <Button Name="WriteCredentials" Content="Write Credentials" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0"
+        <Button Name="WriteCredentials" Content="Write Credentials" Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0"
                 FontSize="14" Click="WriteCredentials_Click"/>
 
 

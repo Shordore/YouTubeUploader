@@ -2,18 +2,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fluent="clr-namespace:Avalonia.Themes.Fluent;assembly=Avalonia.Themes.Fluent"
         Title="YouTube Uploader" Width = "800" Height = "600"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Uploader.MainWindow">
 
 <Grid>
-<TextBlock Text="Paste Your Clip Into The Box Below:" 
-           HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"
-           FontSize="16" FontWeight="Bold"/>
+<Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>   
+      <RowDefinition Height="*"/>      
+      <RowDefinition Height="Auto"/> 
+    </Grid.RowDefinitions>
+
+<StackPanel Grid.Row="0" Margin="20" HorizontalAlignment="Center">
+      <TextBlock Text="YouTube Uploader" FontSize="24" FontWeight="Bold" Foreground="White"/>
+    </StackPanel>
 
 <TextBlock Text="Shahyah Darioosh 2025"
-           HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"
-           FontSize="12"/>
+           HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Bottom" Margin="0,0,0,20"
+           FontSize="8"/>
 
 
 <Grid.Background>
@@ -22,46 +29,37 @@
 
 
 
-<Canvas>
+<Grid Grid.Row="1" Margin="20">
+    <Rectangle Stroke="Gray"
+             StrokeThickness="2"
+             StrokeDashArray="4,2"
+             Fill="Transparent"/>
 
-<Rectangle 
-        Width="700" Height="200"
-        Stroke="Gray"
-        StrokeThickness="2"
-        StrokeDashArray="4,2"
-        Fill="Transparent"
-        Canvas.Left = "50"
-        Canvas.Top = "350"/>
-
-<Border Name="PasteArea" 
-        Focusable="True"
-        PointerPressed="PasteArea_PointerPressed"
-        KeyDown="PasteArea_KeyDown"
-        Width="700"
-        Height="200"
-        Canvas.Left="50"
-        Canvas.Top="350"
-        Background="Transparent">
+<Border Name="PasteArea"
+          Focusable="True"
+          PointerPressed="PasteArea_PointerPressed"
+          KeyDown="PasteArea_KeyDown"
+          Background="Transparent"
+          Margin="10">
     <TextBlock Text="Paste Box"
                FontSize="14"
                FontWeight="Bold"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"/>
-</Border>
-    
+  </Border>
+</Grid>
 
-</Canvas>
-
-<TextBox Name="VideoNameBox" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,300,0,0" 
+<TextBox Name="VideoNameBox" Width="200" Height="30" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,-25,0,0" 
          Watermark="Add Video Name Here" FontSize="14"/>
 
 <TextBox x:Name="ConsoleOutput"
             
-            Width="240"
+            Width="550"
             Height="300"
             TextWrapping="Wrap"
              HorizontalAlignment="Right"
-            VerticalAlignment="Top" Margin="0,30,10,0"
+            VerticalAlignment="Center" 
+            Margin="0,70,10,0"
              IsReadOnly="True"
              AcceptsReturn="True"
              FontSize="12"
@@ -71,7 +69,7 @@
              />
 
 
-<Button Name="SettingsWindows" Content="Settings" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,10,0,0" 
+<Button Name="SettingsWindows" Content="Settings" Width="75" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0" 
         Click="SettingsWindows_Click"/>
 
 </Grid>

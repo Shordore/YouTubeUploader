@@ -1,10 +1,8 @@
 using System;
 using System.Threading.Tasks;
 using Avalonia.Interactivity;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
-using Avalonia.Platform;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Upload;
@@ -12,7 +10,6 @@ using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
 using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using Avalonia.Threading;
 
 

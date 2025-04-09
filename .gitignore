@@ -5,3 +5,5 @@ Uploader/obj/**
 Uploader/secret.txt
 package.json
 release-it.json
+dist
+dist/**

@@ -33,6 +33,7 @@ public partial class MainWindow : Window
     private async Task VideoUploader(string FilePath, string VideoName)
     {
 
+        ClearConsole();
         string clientId = "";
         string clientSecret = "";
         var filePath = "secret.txt";
@@ -117,6 +118,7 @@ public partial class MainWindow : Window
                 var videoid = videosInsertRequest.ResponseBody.Id;
                 var url = $"https://youtu.be/{videoid}";
                 AppendToConsole("Video URL: " + url);
+                await this.Clipboard.SetTextAsync(url);
             }
         }
     }
@@ -129,9 +131,6 @@ public partial class MainWindow : Window
             return;
         }
         var text = await clipboard.GetTextAsync();
-
-        //Debug
-        AppendToConsole("Clipboard text: " + (text ?? "null"));
 
 
         if (Uri.TryCreate(text, UriKind.Absolute, out var uri) && uri.IsFile)
@@ -203,6 +202,11 @@ public partial class MainWindow : Window
         {
             ConsoleOutput.Text += message + Environment.NewLine;
         });
+    }
+
+    private void ClearConsole()
+    {
+        ConsoleOutput.Text = "";
     }
 
 }

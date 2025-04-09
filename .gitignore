@@ -3,3 +3,5 @@ client_secret_408785723675-dcjigefun2oekopq2s4fnc9qvl1eb7d6.apps.googleuserconte
 Uploader/bin/**
 Uploader/obj/**
 Uploader/secret.txt
+package.json
+release-it.json
